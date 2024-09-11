@@ -1,9 +1,22 @@
 {
-  "name": "interfaces",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "interfaces/src",
-  "projectType": "library",
-  "tags": [],
-  "// targets": "to see all targets run: nx show project interfaces --web",
-  "targets": {}
+  "root": "libs/interfaces",
+  "sourceRoot": "libs/interfaces/src",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/interfaces/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/interfaces"],
+      "options": {
+        "jestConfig": "libs/interfaces/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
 }

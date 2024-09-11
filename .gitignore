@@ -8,8 +8,7 @@ tmp
 # dependencies
 node_modules
 
-# env
-envs
+/envs
 
 # IDEs and editors
 /.idea
